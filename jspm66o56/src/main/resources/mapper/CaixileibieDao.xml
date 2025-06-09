@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.CaixileibieDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.CaixileibieEntity" id="caixileibieMap">
+        <result property="caixi" column="caixi"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.CaixileibieVO" >
+		SELECT * FROM caixileibie  caixileibie         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.CaixileibieVO" >
+		SELECT  caixileibie.* FROM caixileibie  caixileibie 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.CaixileibieView" >
+
+		SELECT  caixileibie.* FROM caixileibie  caixileibie 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.CaixileibieView" >
+		SELECT * FROM caixileibie  caixileibie <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
